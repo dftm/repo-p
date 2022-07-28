@@ -1,0 +1,210 @@
+<!--  
+        ####  Only JS is to go here , this goes    ###
+        ####  Only JS is to go here , this goes    ###
+        ####  in the lower HTML area               ###     
+-->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E782QXTT9J"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-E782QXTT9J');
+</script>
+
+<!-- End Google Analytics -->
+
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-KFVZD5H');</script>
+<!-- End Google Tag Manager -->
+
+<script>
+    // Define Modal
+    var modal = document.getElementById("myModal");
+
+    // Load Modal
+    $(window).on("load", function () {
+        if (typeof skilljarUser !== 'undefined') {
+            if (isSkilljarFirstPageviewSinceAuth == true) {
+                modal.style.display = "block";
+            }
+        }
+    });
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    //end modal
+</script>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFVZD5H" height="0" width="0"
+        style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Start Tag based Page Separator JS/CSS -->
+<script>
+    var tagName = '[Separator]';
+    $('document').ready(function () {
+        $('.coursebox-container').each(function () {
+            if ($(this).find('.coursebox-text').text().indexOf(tagName) !== -1) {
+                $(this).find('.coursebox-text').text($(this).find('.coursebox-text').text().replace(tagName, ""));
+            }
+        });
+    });
+</script>
+<!-- Start Auto Register on Click. Supports single lesson -->
+<script>
+    $(document).ready(function () {
+        var refGuides = document.querySelectorAll('#skilljar-content #catalog-content #catalog-courses a[data-tags*="resource-center"]')
+
+        refGuides.forEach(function (node) {
+            var href = node.href;
+            if (!~href.indexOf('?reg=1')) {
+                node.href = href + '?reg=1';
+            }
+        })
+    })
+</script>
+<!-- End Auto Register on Click -->
+
+<!-- Start Replace Tiles with Links -->
+<script>
+    $('document').ready(function () {
+        $('[data-catalog-page="live-trainings"]').attr("href", "https://persado-poc.skilljar.com/calendar");
+    });
+</script>
+<!-- End Replace Tiles with Links -->
+
+
+<!-- Start back to catalog - 09/19/2018 -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        if ($(".sj-page-lesson").length != 0 && $(".next-lesson-button").length == 0) {
+            var backButton = '<div id="back-to-catalog"><a href="/" class="small button next-lesson-link"><span>Back to Catalog</span></a></div>';
+            $(".full-footer-height-wrapper.align-vertical").prepend(backButton);
+        }
+    });
+</script>
+<!-- End back to catalog - 09/19/2018 -->
+
+<!-- Start Update Whitelist/blacklist code -->
+<script>
+    /* ========
+      Instructions:
+      - Add any whitelist/blacklist domains or parts of domains below (in quotes and comma separated)
+      - Remove all items if you don't want to have a whitelist or blacklist. e.g. emailBlacklist = []
+      - Change the emailError to the desired text
+      - If you would like to whitelist/blacklist login field change blockSignIn to true else set to false.
+      ======== */
+    $('document').ready(function () {
+        var emailWhiteList = [
+            //'skilljar.com' // example
+        ];
+        var emailBlackList = [
+            'yahoo.com', // the following are examples
+            'hotmail.com',
+            'outlook.com',
+            'protonmail.com',
+            'qq.com',
+            '163.com',
+            'live.com',
+            'icloud.com',
+            'me.com',
+            'gmail.com'
+        ];
+        var emailError = 'Please use your business email.';
+        var blockSignIn = true;
+        var signUpUrl = window.location.href.indexOf(
+            'accounts.skilljar.com/accounts/signup'
+        );
+        var signInUrl = window.location.href.indexOf(
+            'accounts.skilljar.com/accounts/login'
+        );
+        if (signUpUrl != -1) {
+            checkIfValidEmail(emailWhiteList, emailBlackList, emailError, true);
+        } else if (blockSignIn && signInUrl != -1) {
+            checkIfValidEmail(emailWhiteList, emailBlackList, emailError, false);
+        }
+    });
+    function checkIfValidEmail(
+        emailWhiteList,
+        emailBlackList,
+        emailError,
+        onSignUpPage = false
+    ) {
+        $('form').submit(function (e) {
+            e.preventDefault();
+
+            var emailField = onSignUpPage ? $('#id_email') : $('#id_login');
+            var emailValue = $('#id_email').val() || $('#id_login').val();
+            var emailSplit = emailValue.split('@');
+            var email = emailSplit[1] ? emailSplit[1].toLowerCase() : null;
+
+            var onlyWhiteList =
+                emailBlackList.length < 1 &&
+                email &&
+                emailWhiteList.indexOf(email) !== -1;
+            var onlyBlackList =
+                emailWhiteList.length < 1 &&
+                email &&
+                emailBlackList.indexOf(email) === -1;
+            var whiteListAndBlackList =
+                email &&
+                emailWhiteList.indexOf(email) !== -1 &&
+                emailBlackList.indexOf(email) === -1;
+            if (onlyWhiteList || onlyBlackList || whiteListAndBlackList) {
+                emailField.removeClass('error');
+                emailField.parent().find('small.error').remove();
+                this.submit();
+                return;
+            } else {
+                errorHandling(emailField, emailError);
+            }
+        });
+    }
+
+    function errorHandling(emailField, emailError) {
+        if (!emailField[0].classList.contains('error')) {
+            emailField.addClass('error');
+            emailField
+                .parent()
+                .append('<small class="error">' + emailError + '<br></small>');
+        }
+    }
+</script>
+<!-- End Update Whitelist/blacklist code-->
+
+
+<!-- Start Tag based Page Separator JS/CSS For Sections This Time -->
+<script>
+    var tagName = '[Section]';
+    $('document').ready(function () {
+        $('.coursebox-container').each(function () {
+            if ($(this).find('.coursebox-text').text().indexOf(tagName) !== -1) {
+                $(this).find('.coursebox-text').text($(this).find('.coursebox-text').text().replace(tagName, ""));
+            }
+        });
+    });
+</script>
+<!-- End Tag based Page Separator JS/CSS For Sections This Time -->

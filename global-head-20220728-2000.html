@@ -1,0 +1,509 @@
+<!--  
+        ####  Only CSS is to go here , this goes   ###
+        ####  Only CSS is to go here , this goes   ###
+        ####  in the html HEAD element             ###     
+-->
+
+
+<style>
+    /* The Modal (background) */
+    .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: -250px;
+    right: -400px;
+    width: 3000px;
+    height: 2000px;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 800px 800px;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 650px;
+    height: 400px;
+}
+
+
+    /* The Close Button */
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+
+<style>
+    /* Start Thin Full Screen Announcement/Ribbon banner stylings */
+    .full-screen-ribbon {
+        min-height: 70px;
+        display: flex;
+        padding: 0px;
+        background-color: #F9B315;
+        color: #000000;
+        font-size: 17px;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 5px;
+        Margin-top: -50px
+    }
+
+    .fs-ribbon-text {
+        padding: 20px;
+    }
+
+    a.ribbon-button-link {
+        text-align: center;
+        min-width: 135px;
+        margin: 0px;
+        margin-right: 15px;
+        color: white;
+        padding: 10px 25px;
+        background-color: #E20017;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+    }
+
+    .full-screen-ribbon a:hover {
+        text-decoration: underline;
+    }
+
+    /* End Thin Full Screen Announcement/Ribbon banner stylings */
+</style>
+
+<!-- Start Styles -->
+<!-- Start remove FREE labeling on card - 06/21/22 -->
+<style type="text/css">
+    a.coursebox-container .storefront-price {
+        display: none;
+    }
+</style>
+<!-- End remove FREE labeling on card - 06/21/22 -->
+
+<!-- Proxima Nova FONT  -->
+<link rel="stylesheet" href="https://use.typekit.net/yre6jei.css">
+
+<style type="text/css">
+    /* back to catalog CTA */
+    #back-to-catalog {
+        vertical-align: middle;
+        display: table-cell;
+        height: 49px;
+    }
+
+    #back-to-catalog a {
+        margin-bottom: 0;
+    }
+
+    /* remove outline on the course details page title / register box */
+    .dp-summary-wrapper {
+        border: none;
+    }
+
+    /* Adjust logo size on desktop view.  */
+    @media only screen and (min-width: 768px) {
+        #header .header-center-img {
+            max-height: 20px;
+        }
+    }
+
+    /* Add Proxima Nova as global font */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    div,
+    p,
+    span,
+    button,
+    a,
+    input,
+    select,
+    option,
+    textarea {
+        font-family: 'proxima-nova', sans-serif !important;
+    }
+
+    /* PROXIMA NOVA ======== */
+    @import url("https://p.typekit.net/p.css?s=1&k=yre6jei&ht=tk&f=137.138.139.140.169.170.171.172.173.174.175.176.5474.5475.25136.25137.141.142.143.144.145.146.147.148.149.150.151.152.153.154.25138.25139.155.156.157.158.159.160.161.162.163.164.165.166.167.168.25140.25141&a=107494733&app=typekit&e=css");
+
+    .tk-proxima-nova {
+        font-family: "proxima-nova", sans-serif;
+    }
+
+    .tk-proxima-nova-condensed {
+        font-family: "proxima-nova-condensed", sans-serif;
+    }
+
+    .tk-proxima-nova-extra-condensed {
+        font-family: "proxima-nova-extra-condensed", sans-serif;
+    }
+
+    /* ======== PROXIMA NOVA */
+
+    /*Remove course title from course cards*/
+    .coursebox-text {
+        display: none;
+    }
+
+    /*End Remove course title from course cards */
+
+    #ep-footer>div.right {
+        color: white;
+        font-size: 1px;
+        /* margin-right: -9999px; */
+    }
+
+    #catalog-courses {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        z-index: 0;
+    }
+
+    .social-media-wrapper {
+        display: none;
+    }
+
+
+    /* hide course price/CTA text, tile image, hide separator courses from search 
+    a.coursebox-container[data-tags*="separator"] .storefront-price,
+    .search a.coursebox-container[data-tags*="separator"],
+    a.coursebox-container[data-tags*="separator"] .coursebox-image  {
+      display: none !important;
+    }*/
+    .is-survey .sj-text-quiz-start span,
+    .is-survey .sj-text-quiz-submit span,
+    .is-survey .sj-text-quiz-passed span,
+    .is-survey .sj-text-quiz-failed span,
+    .is-survey .sj-text-quiz-take-again span,
+    .is-survey .sj-text-quiz-completed span,
+    .is-survey .score,
+    .is-survey .time,
+    .is-survey .results {
+        display: none;
+    }
+
+    .is-survey .sj-text-quiz-start::after {
+        content: 'Start Survey';
+    }
+
+    .is-survey .sj-text-quiz-submit::after {
+        content: 'Submit Survey';
+    }
+
+    .is-survey .sj-text-quiz-take-again::after {
+        content: 'Take this survey again';
+    }
+
+    .is-survey .sj-text-quiz-passed::after {
+        content: 'Thank you for your feedback!';
+    }
+
+    .is-survey .sj-text-quiz-failed::after {
+        content: 'Thank you for your feedback!';
+    }
+
+    .is-survey .sj-text-quiz-completed::after {
+        content: 'Thank you for your feedback!';
+    }
+</style>
+
+<style type="text/css">
+    /*   <!-- Start Homepage Styles - DIV is needed --> */
+    /* remove outline on the course details page title / register box */
+    .dp-summary-wrapper {
+        border: none;
+    }
+
+    a.coursebox-container {
+        width: 250px;
+        border: 1px solid #D6D5D5;
+    }
+
+    a.coursebox-container .coursebox-text {
+        font-size: 24px;
+        text-decoration: underline;
+        text-decoration-color: #DC2F30;
+    }
+
+    .header-button-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header-button {
+        vertical-align: middle;
+        overflow: hidden;
+        color: #FFFFFF;
+        background: #FF0A00;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 500;
+        text-align: left;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        border-bottom: 2px solid #1e2f45;
+    }
+
+    .header-button:hover,
+    .header-button:focus {
+        color: #FFFFFF;
+        border: .5px solid #fff;
+        text-decoration: underline;
+        color: #1e2f45;
+    }
+
+    .ch-button-wrapper {
+        width: 102%;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        padding-bottom: 35px;
+    }
+
+    .ch-button {
+        font-weight: 300;
+        letter-spacing: 0.03em;
+        vertical-align: middle;
+        color: #FFFFFF;
+        background: #FFFFFF;
+        padding: 16px 24px 16px;
+        margin: 0px 10px;
+        border-radius: 5px;
+    }
+
+    .ch-button:hover,
+    .ch-button:focus {
+        color: #FFF;
+        background: #fff;
+        box-shadow: 0 0 0 1px #dc5c4c;
+    }
+
+
+    .ch-wrapper {
+        margin: auto;
+        min-height: 455px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+    }
+
+    .ch-section {
+        color: #ffffff;
+        display: flex;
+        width: 55% !important;
+        margin-top: 130px;
+        flex-direction: column;
+        justify-content: right;
+        align-items: right;
+        margin-bottom: 0px;
+    }
+
+    .ch-title {
+        font-size: 30px;
+        /*font-weight: bold !important;*/
+        width: 105%;
+        text-align: right;
+        margin-bottom: 20px;
+        margin-right: 10px;
+        padding: 20px;
+        /*      color: #E20017; */
+        color: #FFFFFF;
+        /*background-color: #040707;*/
+        background-color: rgba(3, 25, 45, 1);
+        /* background:radial-gradient(rgb(3, 25, 45), transparent);*/
+        line-height: 25pt;
+    }
+
+    .ch-sub-title {
+        font-size: 18px;
+        font-weight: light;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    @media only screen and (min-width: 1213px) {
+        .ch-wrapper {
+            width: 1215px;
+        }
+
+        .ch-section {
+            width: 70%;
+        }
+
+        .ch-sub-title {
+            margin-bottom: 0px;
+        }
+    }
+
+    /* START Catalog/Series Header Forced to Full Width snippet. */
+    .catalog-center-width.one-col-full {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0;
+    }
+
+    .storefront .top-row {
+        padding: 0;
+        /* background: url(); */
+        background-size: cover;
+        background-position-x: center;
+        background-position-y: center;
+        background-repeat: no-repeat;
+        position: relative;
+        height: 100%;
+        /* margin-top: -420px; */
+    }
+
+    /* remove the 6px of left padding that catalog-header normally has */
+    .catalog-center-width .catalog-header {
+        padding: 0;
+        margin-bottom: 40px;
+    }
+
+    /* END Catalog/Series Header Forced to Full Width snippet. */
+
+    /*.active {background-color: #1c1d1f !important} */
+
+
+    #catalog-courses {
+        margin-left: auto;
+        /* justify-content: left; */
+    }
+
+    .fixed {
+        position: fixed;
+        top: 0;
+    }
+
+    /* Start Small Quick Nav Button stylings */
+    .quick-nav-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        Margin-top: 50px;
+        margin: 20px;
+        margin-bottom: -20px;
+    }
+
+    .quick-nav-button {
+        width: 205px;
+        display: flex;
+        background-color: #E20017;
+        margin: 15px 7.5px;
+        align-items: center;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        border-radius: 4px;
+    }
+
+    a.quick-nav-button:hover {
+        background-color: #D6D5D5;
+    }
+
+    a.quick-nav-button:hover .qn-header {
+        color: black;
+    }
+
+    .qn-text-wrapper {
+        margin: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .qn-header-wrapper {
+        width: 100%;
+    }
+
+    .qn-header {
+        color: #ffffff;
+        font-size: 18px;
+        line-height: 24px;
+        padding: 18px 15px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    /* End Small Quick Nav Button stylings */
+    /*  END Homepage Styles - DIV is needed  */
+
+    /* START Sign Up Form  */
+    .socialaccount_providers {
+        display: none;
+    }
+
+    /* END Sign Up Form  */
+
+    /*-- Start Tag based Page Separator JS/CSS --> */
+    /* Set font size for section separator titles */
+    a.coursebox-container[data-tags*="section"] .coursebox-text {
+        font-size: 30px
+    }
+
+    /* Set font size for separator sub-titles */
+    a.coursebox-container[data-tags*="section"] .coursebox-text-description {
+        font-size: 32px;
+        color: #E20017;
+        font-weight: bold;
+        font-weight: bold;
+    }
+
+    /* remove all standard course tile styling, add 100% page width */
+    a.coursebox-container[data-tags*="section"] {
+        padding: 10px !important;
+        text-align: center !important;
+        width: 100% !important;
+        border-bottom-style: dotted;
+        min-height: unset !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        pointer-events: none !important;
+        border: none !important;
+        border: 1px solid #ffffff !important;
+        height: 55px !important;
+        padding: 0px !important;
+        margin: 20px;
+        background: #ffffff !important;
+        color: black !important;
+        /*   opacity: 0.125; */
+    }
+
+    /* hide course price/CTA text, tile image, hide separator courses from search */
+    a.coursebox-container[data-tags*="section"] .storefront-price,
+    .search a.coursebox-container[data-tags*="section"],
+    a.coursebox-container[data-tags*="section"] .coursebox-image {
+        display: none !important;
+    }
+
+    /*-- End Tag based Page Separator JS/CSS --> */
+</style>
+<!-- End Styles -->
